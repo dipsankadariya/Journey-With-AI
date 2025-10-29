@@ -8,6 +8,7 @@ A comprehensive collection of Machine Learning and Deep Learning implementations
 AI Journey/
 ├── Machine Learning/
 ├── Deep Learning/
+├── Natural Language Processing/
 └── Projects/
 ```
 
