@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeQuake - Crack Detection</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="upload-section">
+      <h2>SafeQuake</h2>
+      <p class="description">Upload an image of a structure to detect cracks.</p>
+
+      <input type="file" id="fileInput" accept="image/*" style="display: none;">
+      <button id="chooseFileBtn" type="button">Choose Image</button>
+      <button id="uploadBtn" type="button">Analyze Image</button>
+      <img id="previewImage" alt="Preview">
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const chooseFileBtn = document.getElementById("chooseFileBtn");
+    const previewImage = document.getElementById("previewImage");
+    const resultDiv = document.getElementById("result");
+    const uploadBtn = document.getElementById("uploadBtn");
+
+    chooseFileBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewImage.src = e.target.result;
+          previewImage.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+        resultDiv.classList.remove('show');
+        resultDiv.innerHTML = "";
+      }
+    });
+
+    uploadBtn.addEventListener('click', async () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("Please select an image first!");
+        return;
+      }
+
+      uploadBtn.disabled = true;
+      uploadBtn.textContent = "Analyzing...";
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      try {
+        const response = await fetch("/predict", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        resultDiv.classList.add("show");
+
+        if (data.error) {
+          resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+        } else {
+          resultDiv.innerHTML = `
+            <h3>${data.prediction}</h3>
+            <p><strong>Confidence:</strong> ${data.confidence}</p>
+            <p><strong>Crack Probability:</strong> ${data.crack_probability}</p>
+            <p><strong>Safe Probability:</strong> ${data.safe_probability}</p>
+          `;
+        }
+      } catch (error) {
+        resultDiv.classList.add("show");
+        resultDiv.innerHTML = `<p style="color:red;">Error connecting to backend!</p>`;
+        console.error(error);
+      } finally {
+        uploadBtn.disabled = false;
+        uploadBtn.textContent = "Analyze Image";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 90%;
+  max-width: 1000px;
+  padding: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#chooseFileBtn {
+  padding: 12px 20px;
+  border: 1px solid #a5b4fc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+#chooseFileBtn:hover {
+  background-color: #f0f4ff;
+  transform: translateY(-1px);
+}
+
+#uploadBtn {
+  padding: 12px 20px;
+  border: 1px solid #a5b4fc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+#uploadBtn:hover {
+  background-color: #f0f4ff;
+  transform: translateY(-1px);
+}
+
+
+#previewImage {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  display: none;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+
+#result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  border: none;
+  min-height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: transparent; 
+}
+
+#result.show {
+  opacity: 1;
+}
+
+#result h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111111;
+}
+
+#result p {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+#result p strong {
+  font-weight: 600;
+  color: #1e3a8a; 
+}
+
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  #previewImage {
+    max-width: 100%;
+  }
+
+  #chooseFileBtn,
+  #uploadBtn {
+    width: 100%;
+  }
+
+  #result {
+    width: 100%;
+    min-height: auto;
+  }
+}
