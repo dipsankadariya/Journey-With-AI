@@ -1,0 +1,36 @@
+Movies Dataset Sample
+
+Movie: The Shawshank Redemption Year: 1994 Genre: Drama Summary: A
+banker sentenced to prison forms friendships and maintains hope while
+seeking freedom.
+
+Movie: Inception Year: 2010 Genre: Science Fiction Summary: A skilled
+thief enters people’s dreams to steal or implant ideas.
+
+Movie: The Dark Knight Year: 2008 Genre: Action Summary: Batman faces
+the Joker, a criminal mastermind who spreads chaos across Gotham City.
+
+Movie: Interstellar Year: 2014 Genre: Science Fiction Summary: A team of
+astronauts travels through a wormhole in search of a new home for
+humanity.
+
+Movie: Parasite Year: 2019 Genre: Thriller Summary: A poor family
+gradually infiltrates the lives of a wealthy household, leading to
+unexpected consequences.
+
+Movie: Spirited Away Year: 2001 Genre: Animation Summary: A young girl
+enters a mysterious spirit world and must find a way to save her
+parents.
+
+Movie: The Godfather Year: 1972 Genre: Crime Summary: The story of a
+powerful mafia family and the transfer of leadership between
+generations.
+
+Movie: Forrest Gump Year: 1994 Genre: Drama Summary: A kind-hearted man
+unintentionally influences several major historical events.
+
+Movie: The Matrix Year: 1999 Genre: Science Fiction Summary: A computer
+hacker discovers that reality is a simulation controlled by machines.
+
+Movie: Titanic Year: 1997 Genre: Romance Summary: A love story unfolds
+aboard the ill-fated RMS Titanic.
