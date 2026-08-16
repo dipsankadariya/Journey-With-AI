@@ -1,0 +1,3 @@
+[server]
+# Prevent Streamlit from probing optional Transformers image modules at startup.
+fileWatcherType = "none"

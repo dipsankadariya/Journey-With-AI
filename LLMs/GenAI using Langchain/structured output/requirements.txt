@@ -1,0 +1,3 @@
+pydantic[email]
+langchain-google-genai
+python-dotenv

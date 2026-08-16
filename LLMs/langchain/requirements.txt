@@ -1,8 +1,0 @@
-langchain
-langchain-community
-langchain-openai
-langchain-text-splitters
-langchain-experimental
-pypdf
-beautifulsoup4
-python-dotenv

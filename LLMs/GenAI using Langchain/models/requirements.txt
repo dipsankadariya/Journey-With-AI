@@ -1,0 +1,32 @@
+torch
+# LangChain Core
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-experimental
+
+# Anthropic Integration
+langchain-anthropic
+
+# Google Gemini Integration
+langchain-google-genai>=4.0.0
+google-genai
+
+# Hugging Face Integration
+langchain-huggingface
+transformers
+huggingface-hub
+
+# Document/Web Processing
+pypdf
+beautifulsoup4
+
+# Environment Variable Management
+python-dotenv
+
+# Machine Learning Utilities
+numpy
+scikit-learn
+
+sentence_transformers
